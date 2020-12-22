@@ -1,6 +1,8 @@
 // importing FunctionComponent
 import React, { useState, useEffect, useReducer, FunctionComponent } from 'react';
 import axios from 'axios';
+import styles from '../styles/TestApi.module.css'
+
 
 const initialState = {count: 0};
 
@@ -17,10 +19,14 @@ function reducerFn(state, action) {
 
 const TestApi = () => {
   const [data, setData] = useState({})
+  const url = 'http://localhost:3000/api/hello'
 
-  useEffect(async() => {
-    const result = await axios('http://localhost:3000/api/hello')
-    setData(result.data)
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(url);
+      setData(result.data);
+    };
+    fetchData();
   }, [])
 
   const [state, dispatch] = useReducer(reducerFn, initialState);
