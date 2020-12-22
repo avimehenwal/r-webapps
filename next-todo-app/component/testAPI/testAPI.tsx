@@ -1,37 +1,60 @@
 // importing FunctionComponent
-import React, { useState, useEffect, FunctionComponent } from 'react';
+import React, { useState, useEffect, useReducer, FunctionComponent } from 'react';
 import axios from 'axios';
 
+const initialState = {count: 0};
+
+function reducerFn(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error();
+  }
+}
+
 const TestApi = () => {
-  const [data, setData] = useState({key: 'value'})
+  const [data, setData] = useState({})
 
   useEffect(async() => {
     const result = await axios('http://localhost:3000/api/hello')
     setData(result.data)
   }, [])
 
-  return (
-    <div>
-      <h3>Test API</h3>
-      <pre>
-        {JSON.stringify(data, null, 4)}
-      </pre>
+  const [state, dispatch] = useReducer(reducerFn, initialState);
 
-      <table>
-        <tr>
-          <th>S.No</th>
-          <th>Key</th>
-          <th>Value</th>
-        </tr>
-        {Object.entries(data).map(([key, value], index) =>
-        <tr key={key}>
-          <td>{index}</td>
-          <td>{key}</td>
-          <td>{value}</td>
-        </tr>
-      )}
-    </table>
-    </div>
+  return (
+    <>
+      <div>
+        <h3>Test API</h3>
+        <pre>
+          {JSON.stringify(data, null, 4)}
+        </pre>
+
+        <table>
+          <tr>
+            <th>S.No</th>
+            <th>Key</th>
+            <th>Value</th>
+          </tr>
+          {Object.entries(data).map(([key, value], index) =>
+          <tr key={key}>
+            <td>{index}</td>
+            <td>{key}</td>
+            <td>{value}</td>
+          </tr>
+        )}
+      </table>
+
+      <div>
+        <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+        Count: {state.count}
+        <button onClick={() => dispatch({type: 'increment'})}>+</button>
+      </div>
+      </div>
+    </>
   )
 }
 
