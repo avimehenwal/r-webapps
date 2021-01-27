@@ -11,6 +11,9 @@
     "component",
     "library"
   ],
+  "peerDependencies": {
+    "react": ">17.0.0"
+  },
   "author": "avimehenwal",
   "license": "ISC"
 }
