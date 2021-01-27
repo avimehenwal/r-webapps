@@ -1,0 +1,16 @@
+{
+  "name": "component-lib",
+  "version": "1.0.0",
+  "description": "react component library",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "library"
+  ],
+  "author": "avimehenwal",
+  "license": "ISC"
+}
