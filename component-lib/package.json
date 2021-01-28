@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "react component library",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
-    "build:watch": "tsc --project tsconfig.json --pretty --watch",
-    "build": "rm -rf dist; tsc --project tsconfig.json --pretty"
+    "watch": "tsc --project tsconfig.json --pretty --watch",
+    "compile": "rm -rf dist; tsc --project tsconfig.json --pretty",
+    "bundle": "./scripts/ready-distribution.sh",
+    "build": "npm run compile && npm run bundle",
+    "pack": "npm publish --dry-run"
   },
   "keywords": [
     "react",

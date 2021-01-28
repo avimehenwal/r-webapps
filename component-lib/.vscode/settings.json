@@ -18,6 +18,7 @@
     "release",
     "vscode",
     "tsc",
-    "cra"
+    "cra",
+    "npm"
   ]
 }
