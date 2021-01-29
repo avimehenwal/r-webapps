@@ -65,11 +65,13 @@
   },
   "include": [
     "index.ts",
-    "src/**/*"
-, "Button"  ],
+    "src/**/*",
+    "Button"
+  ],
   "exclude": [
     "node_modules",
     "my-app/*",
-    "**/*.spec.ts"
+    "**/*.spec.ts" /* exclude tests, are for internal quality only */,
+    "**/*.stories.*" /* exclude stories.js files, we host the component gallery page */,
   ]
 }

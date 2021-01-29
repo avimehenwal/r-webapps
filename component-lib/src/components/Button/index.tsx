@@ -10,7 +10,7 @@ let defaultProps: CardProps = {
   paragraph: 'Non eiusmod occaecat adipisicing ipsum cillum laborum excepteur amet quis et nostrud reprehenderit. Sit quis magna deserunt dolore elit laborum adipisicing non id commodo occaecat ut aliqua. Tempor veniam non eiusmod eu voluptate do elit adipisicing incididunt id nostrud consequat esse.'
 }
 
-export const Card = (props = defaultProps) =>
+export const Button = (props = defaultProps) =>
   <aside>
     <h2>{props.title}</h2>
     <p>

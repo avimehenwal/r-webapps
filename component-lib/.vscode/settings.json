@@ -19,6 +19,7 @@
     "vscode",
     "tsc",
     "cra",
-    "npm"
+    "npm",
+    "system"
   ]
 }
