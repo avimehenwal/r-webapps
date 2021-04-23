@@ -4,7 +4,7 @@
   "description": "react component library",
   "author": "avimehenwal",
   "license": "ISC",
-  "main": "dist/index.js",
+  "main": "dist/components/index.js",
   "files": [
     "dist/components/"
   ],

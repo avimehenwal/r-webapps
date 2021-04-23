@@ -35,19 +35,18 @@ You don’t need to customize your Webpack config to use the library, this resul
 
 which can be one of "amd", "cjs", "system", "es", "iife" or "umd"
 
-
 ## Use Case
 
 Reuse components across react projects (^17 with hooks)
 
-* add build tests to support older versions of react
+- add build tests to support older versions of react
 
 ### Features
 
-* ONLY tightly coupled to react.
-* Components are shipped as **ESModules**, theorytically should work with all build systmes, webpack, rollup, parcel, browserfy etc.
-* Minimal final dist bundle size, exclude tests/stories
-* Zero webpack config
+- ONLY tightly coupled to react.
+- Components are shipped as **ESModules**, theorytically should work with all build systmes, webpack, rollup, parcel, browserfy etc.
+- Minimal final dist bundle size, exclude tests/stories
+- Zero webpack config
 
 ```mermaid
 graph LR
@@ -79,3 +78,7 @@ click A "https://www.wikipedia.org/" "Click to open wikipedia"
 
 - [ ] Add storybook as devDependency
 - [ ] CSS preprocessor? YAGNI, CSS3 is pretty powerful in itself
+- [ ] Issue - Remove top level dist directory
+
+There is no way of accomplishing this with only using npm tooling. Another script/tool could be used to arrange your package.
+[SOF: source](https://stackoverflow.com/questions/38935176/how-to-npm-publish-specific-folder-but-as-package-root)

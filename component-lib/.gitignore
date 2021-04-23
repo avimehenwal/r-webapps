@@ -1,6 +1,9 @@
 dist
 node_modules
 
+# test CRA app
+/my-app/.eslintcache
+
 # compiler cpu profiling data
 *.cpuprofile
 

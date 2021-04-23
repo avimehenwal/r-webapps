@@ -82,3 +82,9 @@ click A "https://www.wikipedia.org/" "Click to open wikipedia"
 
 There is no way of accomplishing this with only using npm tooling. Another script/tool could be used to arrange your package.
 [SOF: source](https://stackoverflow.com/questions/38935176/how-to-npm-publish-specific-folder-but-as-package-root)
+
+## tests
+
+How to write jest tests in TypeScript?
+Use `ts-node` REPL to convert ts-->js on the fly for tests, with source mappings
+https://dev.to/muhajirdev/unit-testing-with-typescript-and-jest-2gln
